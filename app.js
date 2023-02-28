@@ -9,6 +9,8 @@ const csrf = require("csurf");
 const flash = require("connect-flash");
 const multer = require("multer");
 
+const POST = process.env.POST || 5050;
+
 const errorController = require("./controllers/error");
 const User = require("./models/user");
 
@@ -114,7 +116,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI)
   .then((result) => {
-    app.listen(5050);
+    app.listen(POST);
   })
   .catch((err) => {
     console.log(err);
