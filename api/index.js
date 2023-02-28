@@ -11,8 +11,8 @@ const multer = require("multer");
 
 const POST = process.env.POST || 5050;
 
-const errorController = require("./controllers/error");
-const User = require("./models/user");
+const errorController = require("../controllers/error");
+const User = require("../models/user");
 
 const MONGODB_URI =
   "mongodb+srv://test1234:test1234@cluster0.uey5rx7.mongodb.net/testtt?retryWrites=true&w=majority";
@@ -48,9 +48,9 @@ const fileFilter = (req, file, cb) => {
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-const adminRoutes = require("./routes/admin");
-const shopRoutes = require("./routes/shop");
-const authRoutes = require("./routes/auth");
+const adminRoutes = require("../routes/admin");
+const shopRoutes = require("../routes/shop");
+const authRoutes = require("../routes/auth");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
